@@ -1,0 +1,44 @@
+name: CICD
+
+on:
+  push:
+    branches: [ main ]
+  workflow_dispatch:
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    # Steps represent a sequence of tasks that will be executed as part of the job
+    steps:
+      # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
+      - name: Checkout
+        uses: actions/checkout@v2
+        with:
+          ref: develop
+          
+      - name: Set Up Node
+        uses: actions/setup-node@v2.1.5
+        
+      - name: Install Yarn
+        uses: Borales/actions-yarn@v2.3.0
+        with:
+          cmd: install
+          
+      - name: Build Application
+        run: yarn build
+
+      - name: Configure AWS Credentials
+        uses: aws-actions/configure-aws-credentials@v1
+        with:
+          aws-access-key-id: ${{ secrets.MANTICORE_COOL_ACCESS_KEY_ID }}
+          aws-secret-access-key: ${{ secrets.MANTICORE_COOL_SECRET_ACCESS_KEY }}
+          aws-region: us-east-1
+          
+      - name: Copy files to the test website with the AWS CLI
+        run: |
+          aws s3 sync ./build s3://manticore-cool
+          
+      - name: Invalidate cache
+        run: |
+          aws cloudfront create-invalidation --distribution-id E26TW1NIT1FWEI --paths "/*"
