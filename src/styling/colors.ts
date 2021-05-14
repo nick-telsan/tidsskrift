@@ -1,0 +1,1 @@
+export const primaryBackground = '#534D41'
