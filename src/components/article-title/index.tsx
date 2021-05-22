@@ -1,13 +1,19 @@
-import { Container } from './styles'
+import { Container, Title, Date } from './styles'
 
 type iProps = {
   title: string
+  date?: string
 }
 
-export const ArticleTitle = ({ title }: iProps) => {
+export const ArticleTitle = ({ title, date }: iProps) => {
   return (
     <Container>
-      <h2>{title}</h2>
+      <Title 
+        mb={date ? "0" : null}
+      >
+        {title}
+      </Title>
+      {date && <Date>{date}</Date>}
     </Container>
   )
 }
