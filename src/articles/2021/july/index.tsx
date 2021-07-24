@@ -1,0 +1,1 @@
+export { SchoolAndMore } from './school-and-more'

@@ -5,6 +5,7 @@ export const Navbar = () => {
     <Container>
       <StyledLink to="/">About</StyledLink>
       <h4>Recent Posts</h4>
+      <StyledLink to="/2021-07-23">School and More</StyledLink>
       <StyledLink to="/2021-06-18">Six Months</StyledLink>
       <StyledLink to="/2021-05-28">Wins and Losses</StyledLink>
       <StyledLink to="/2021-05-22">Struggles</StyledLink>

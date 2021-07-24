@@ -1,5 +1,6 @@
 import { BrowserRouter, Switch, Route} from 'react-router-dom'
 import { About, Welcome, CollectionsAreBadForMe, Struggles, WinsAndLosses, SixMonths } from '../articles'
+import { SchoolAndMore } from '../articles/2021/july'
 import { Navbar } from './navbar'
 
 export const Router = () => {
@@ -8,6 +9,9 @@ export const Router = () => {
       <div style={{display: "flex", height: "100%", position: 'relative'}}>
         <Navbar />
         <Switch>
+          <Route path="/2021-07-23">
+            <SchoolAndMore />
+          </Route>
           <Route path="/2021-06-18">
             <SixMonths />
           </Route>

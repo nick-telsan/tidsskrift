@@ -1,5 +1,6 @@
 import { Link } from 'react-router-dom'
 import styled from 'styled-components'
+import { uiSecondary } from '../../styling/colors'
 
 export const Container = styled.div`
   width: 10%;
@@ -11,6 +12,7 @@ export const Container = styled.div`
 
 export const StyledLink = styled(Link)`
   margin-bottom: 0.5rem;
+  color: white;
   &:visited {
-    color: white;
+    color: ${uiSecondary};
 `
