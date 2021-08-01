@@ -1,5 +1,0 @@
-export const primaryBackground = '#DFE3DD'
-export const uiSecondary = '#8C6057'
-export const uiGreen = '#AFD5AA'
-export const uiBlue = '#7E78D2'
-export const secondaryBackground = '#3C3B54'
