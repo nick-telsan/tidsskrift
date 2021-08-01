@@ -5,6 +5,7 @@ export const ArticlesSideBar = () => (
   <ArticlesBarContainer>
     <ArticleLink to="/">About</ArticleLink>
     <ArticleHeading>Recent Articles</ArticleHeading>
+    <ArticleLink to="/210801">Facilities of Eisolan Chapter 1 Retrospective</ArticleLink>
     <ArticleLink to="/210723">School and More</ArticleLink>
     <ArticleLink to="/210618">Six Months</ArticleLink>
     <ArticleLink to="/210528">Wins and Losses</ArticleLink>

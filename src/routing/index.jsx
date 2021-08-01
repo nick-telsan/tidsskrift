@@ -1,17 +1,20 @@
 import React from 'react'
 import { BrowserRouter, Switch, Route } from 'react-router-dom'
+import { ArticlesSideBar } from '../components'
+import { RouterContainer } from './styles'
+
 import { About } from '../articles'
 import { Welcome, Collections, Struggles, WinsAndLosses } from '../articles/2021/may'
 import { SixMonths } from '../articles/2021/june'
 import { SchoolAndMore } from '../articles/2021/july'
-import { ArticlesSideBar } from '../components'
-import { RouterContainer } from './styles'
+import { FacilitiesRetroOne } from '../articles/2021/august'
 
 export const Router = () => (
   <BrowserRouter>
     <RouterContainer>
       <ArticlesSideBar />
       <Switch>
+        <Route path="/210801" component={FacilitiesRetroOne} />
         <Route path="/210723" component={SchoolAndMore} />
         <Route path="/210618" component={SixMonths} />
         <Route path="/210528" component={WinsAndLosses} />

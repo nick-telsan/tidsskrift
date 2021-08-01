@@ -16,7 +16,7 @@ export const ArticlesBarContainer = styled.div`
 `
 
 export const ArticleLink = styled(Link)`
-  margin-bottom: 0.5rem;
+  margin-bottom: 1rem;
   color: ${primaryText};
   text-decoration: none;
   text-empahsis: bold;
