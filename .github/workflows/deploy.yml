@@ -2,7 +2,7 @@ name: Deploy
 
 on:
   push:
-    branches: [ main ]
+    branches: [main]
   workflow_dispatch:
 
 jobs:
@@ -16,15 +16,15 @@ jobs:
         uses: actions/checkout@v2
         with:
           ref: main
-          
+
       - name: Set Up Node
         uses: actions/setup-node@v2.1.5
-        
+
       - name: Install Yarn
         uses: Borales/actions-yarn@v2.3.0
         with:
           cmd: install
-          
+
       - name: Build Application
         uses: Borales/actions-yarn@v2.3.0
         with:
@@ -36,11 +36,11 @@ jobs:
           aws-access-key-id: ${{ secrets.MANTICORE_COOL_ACCESS_KEY_ID }}
           aws-secret-access-key: ${{ secrets.MANTICORE_COOL_SECRET_ACCESS_KEY }}
           aws-region: us-east-1
-          
+
       - name: Copy files to the test website with the AWS CLI
         run: |
-          aws s3 sync ./build s3://manticore-cool
-          
+          aws s3 sync ./build s3://n.evergrown
+
       - name: Invalidate cache
         run: |
-          aws cloudfront create-invalidation --distribution-id E26TW1NIT1FWEI --paths "/*"
+          aws cloudfront create-invalidation --distribution-id E2P1L8D7ZEILHZ --paths "/*"

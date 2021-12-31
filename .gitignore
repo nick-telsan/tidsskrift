@@ -10,6 +10,7 @@
 
 # production
 /build
+size-plugin.json
 
 # misc
 .DS_Store
