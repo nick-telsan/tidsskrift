@@ -36,7 +36,7 @@ export const manualStats = [
   },
   {
     name: 'commits',
-    title: 'Commits commited',
+    title: 'Commits committed',
     value: 0,
   },
   {
